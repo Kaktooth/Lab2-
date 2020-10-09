@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 
 namespace ConsoleApp71
@@ -22,6 +22,7 @@ namespace ConsoleApp71
             Console.WriteLine(vec1+vec2);
             Console.WriteLine(vec1 - vec2);
             Console.WriteLine(vec1 * vec2);
+
         }
     }
    public class TVector2D
@@ -59,7 +60,7 @@ namespace ConsoleApp71
         {
             return "a: " + a +" "+ "b: " + b;
         }
-        public void EnterVec()
+        public virtual void EnterVec()
         {
             Console.WriteLine("Enter a");
             int a = int.Parse(Console.ReadLine());
@@ -68,22 +69,22 @@ namespace ConsoleApp71
             this.a = a;
             this.b = b;
         }
-        public void EnterVec(double a, double b)
+        public virtual void EnterVec(double a, double b)
         {
 
             this.a = a;
             this.b = b;
         }
-        public void ShowVec()
+       public virtual void ShowVec()
         {
 
             Console.WriteLine("a: " + a + "  " + "b: " + b);
         }
-        public double VecLength()
+       public virtual double VecLength()
         {
             return Math.Abs(Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2)));
         }
-        public void VecNormal()
+       public virtual void VecNormal()
         {
 
             double n = a / this.VecLength();
@@ -91,7 +92,7 @@ namespace ConsoleApp71
             Console.WriteLine("Normalized Vec: (" + n + ";" + m + ")");
 
         }
-        public void VecEquals(TVector2D vec)
+        public virtual void VecEquals(TVector2D vec)
         {
             string equals = "";
             if (a == vec.a && b == vec.b)
@@ -155,7 +156,7 @@ namespace ConsoleApp71
         {
             return "a: " + a  + " b: " + b+" c: "+c;
         }
-        public new void EnterVec()
+     override public void EnterVec()
         {
             Console.WriteLine("Enter a");
             int a = int.Parse(Console.ReadLine());
@@ -174,12 +175,12 @@ namespace ConsoleApp71
             this.b = b;
             this.c = c;
         }
-        public new void ShowVec()
+       override public void ShowVec()
         {
 
             Console.WriteLine("a: " + a + " b: " + b+" c: "+c);
         }
-        public new double VecLength()
+      override public double VecLength()
         {
             return Math.Abs(Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2) + Math.Pow(c, 2)));
         }
@@ -235,4 +236,6 @@ namespace ConsoleApp71
 
     }
 }
+
+
 
