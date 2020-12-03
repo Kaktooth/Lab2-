@@ -250,9 +250,9 @@ namespace ConsoleApp71
         }
         public static double operator *(TVector3D a, TVector3D b)
         {
-            double n = a.x - b.x;
-            double m = a.y - b.y;
-            double k = a.z - b.z;
+            double n = a.x * b.x;
+            double m = a.y * b.y;
+            double k = a.z * b.z;
 
             return n + m + k;
 
